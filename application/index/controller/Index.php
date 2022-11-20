@@ -71,20 +71,6 @@ class Index extends Base
         return view('sindex');
     }
 
-    public function choiceproject(Request $req){
-        if ($req->isPost()){
-            $data=$req->post();
-//            var_dump($data);
-            $res=db('user')->where('username',$data['username'])->update($data);
-            var_dump($res);
-            if ($res){
-                $this->success('选题成功',url ('sindex'));
-            }else{
-                $this->error('选题失败',url('sindex'));
-            }
-        }
-        return view('sindex');
-    }
 
 
     //提交项目进度
