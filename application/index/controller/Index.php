@@ -238,40 +238,7 @@ class Index extends Base
     }
 
 
-    public function scommenttea(Request $req){
-        $res=db('user')->select();
-//        var_dump($res);
-        $this->assign('ids',$res);
-
-        $rem=db('teacher')->select();
-        $this->assign('teacher',$rem);
-        $ret=db('com')->select();
-        $this->assign('com',$ret);
-//        var_dump($rem);
-
-        if($req->isGet()){
-            $num=$req->param('num');
-            $row=db('teacher')->where('num',$num)->find();
-            $this->assign('teacher',$row);
-
-            $rod=db('com')->where('num',$num)->find();
-            $this->assign('com',$rod);
-        }
-        if ($req->isPost()){
-            $data=$req->post();
-            $updateTime=date('Y-m-d H:i:s');
-            $data=array_merge($data,array('updateTime'=>$updateTime));
-            $res=db('com')->where('num',$data['num'])->update($data);
-            var_dump($res);
-            if ($res){
-                $this->success('留言成功',url ('sindex'));
-            }else{
-                $this->error('留言失败',url('sindex'));
-            }
-        }
-
-        return view('scomment');
-    }
+   
 
     public function scomment(Request $req){
         $res=db('user')->select();
