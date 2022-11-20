@@ -56,18 +56,95 @@ class Index extends Base
 
     }
 
+    public function choiceteacher(Request $req){
+        if ($req->isPost()){
+            $data=$req->post();
+//            var_dump($data);
+            $res=db('user')->where('username',$data['username'])->update($data);
+            var_dump($res);
+            if ($res){
+                $this->success('选择成功',url ('sindex'));
+            }else{
+                $this->error('选择失败',url('sindex'));
+            }
+        }
+        return view('sindex');
+    }
+
+    public function choiceproject(Request $req){
+        if ($req->isPost()){
+            $data=$req->post();
+//            var_dump($data);
+            $res=db('user')->where('username',$data['username'])->update($data);
+            var_dump($res);
+            if ($res){
+                $this->success('选题成功',url ('sindex'));
+            }else{
+                $this->error('选题失败',url('sindex'));
+            }
+        }
+        return view('sindex');
+    }
 
 
+    //提交项目进度
+    public function upprogress(Request $req){
+        $res=db('user')->select();
+//        var_dump($res);
+        $this->assign('ids',$res);
+        $ret=db('progress')->select();
+        $this->assign('progress',$ret);
+        if($req->isGet()){
+            $num=$req->param('num');
+            $row=db('progress')->where('num',$num)->find();
+            $this->assign('progress',$row);
+        }
+        if ($req->isPost()){
+            $data=$req->post();
+            $updateTime=date('Y-m-d H:i:s');
+            $data=array_merge($data,array('updateTime'=>$updateTime));
+            $res=db('progress')->where('stuid',$data['stuid'])->update($data);
+            var_dump($res);
+            if ($res){
+                $this->success('更新成功',url ('sindex'));
+            }else{
+                $this->error('更新失败',url('sindex'));
+            }
+        }
 
-
-
+        return view('edit');
+    }
 
 
     public function smdb(){
         return view('smdb');
     }
 
+    public function submitmdb(Request $req){
+        $res=db('user')->select();
+//        var_dump($res);
+        $this->assign('ids',$res);
+        $ret=db('student')->select();
+        $this->assign('student',$ret);
+        if($req->isGet()){
+            $num=$req->param('sno');
+            $row=db('student')->where('sno',$num)->find();
+            $this->assign('student',$row);
+        }
+        if ($req->isPost()){
+            $data=$req->post();
+//            $postTime=$updateTime=date('Y-m-d H:i:s');
+//            $data=array_merge($data,array('postTime'=>$postTime,'updateTime'=>$updateTime));
+            $res=db('student')->insert($data);
+            if ($res){
+                $this->success('提交成功',url('sindex'));
+            }else{
+                $this->error('提交失败',url('sindex'));
+            }
+        }
 
+        return view('sindex');
+    }
 
     // 文件上传
     public function uploads(){
@@ -131,8 +208,13 @@ class Index extends Base
 
         return view('sdbinfo');
     }
+    public function sktbg(){
+        return view('sktbg');
+    }
 
-
+    public function szqjc(){
+        return view('supload');
+    }
 
     public function showteacher(Request $req){
         $res=db('user')->select();
