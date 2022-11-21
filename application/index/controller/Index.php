@@ -169,20 +169,7 @@ class Index extends Base
     public function scontent(){
         return view('scontent');
     }
-    public function schoose(){
-        $res=db('user')->select();
-//        var_dump($res);
-        $this->assign('ids',$res);
 
-        $req=db('teacher')->paginate(5);
-        $this->assign('teacher',$req);
-
-        $ret=db('com')->select();
-        $this->assign('com',$ret);
-//        return view();
-
-        return view('schoose');
-    }
     public function sdbinfo(){
 //        $res=db('student')->select();
 ////        var_dump($res);
