@@ -270,17 +270,6 @@ class Index extends Base
 
 
 
-    public function com(Request $req){
-        if ($req->isPost()){
-            $data=$req->post();
-            $res=db('com')->where('username',$data['username'])->update($data);
-            var_dump($res);
-            if ($res){
-                $this->success('更新成功',url ('sindex'));
-            }else{
-                $this->error('更新失败',url('sindex'));
-            }
-        }
-    }
+
 
 }
