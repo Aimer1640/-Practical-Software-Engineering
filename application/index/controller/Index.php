@@ -266,48 +266,8 @@ class Index extends Base
         return view('scom');
     }
 
-    public function sproject(){
-        $res=db('user')->select();
-//        var_dump($res);
-        $this->assign('ids',$res);
-
-        $req=db('body')->paginate(5);
-        $this->assign('body',$req);
-
-        $ret=db('com')->select();
-        $this->assign('com',$ret);
-//        return view();
-        return view('sproject');
-    }
-
-    public function show(Request $req){
-        $res=db('user')->select();
-//        var_dump($res);
-        $this->assign('ids',$res);
-        $ret=db('body')->select();
-        $this->assign('body',$ret);
-        if($req->isGet()){
-            $num=$req->param('num');
-            $row=db('body')->where('num',$num)->find();
-            $this->assign('body',$row);
-        }
-        if ($req->isPost()){
-            $data=$req->post();
-//            $updateTime=date('Y-m-d H:i:s');
-//            $data=array_merge($data,array('updateTime'=>$updateTime));
-            $res=db('user')->where('id',$data['id'])->update($data);
-            var_dump($res);
-            if ($res){
-                $this->success('选题成功',url ('sindex'));
-            }else{
-                $this->error('选题失败',url('sindex'));
-            }
-        }
 
 
-        return view('show');
-//        return view('index/edit');
-    }
 
 
     public function com(Request $req){
