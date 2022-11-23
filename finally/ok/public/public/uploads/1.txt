@@ -1,0 +1,2 @@
+localhost:801/ok/public/index1.php/index/user/login.html
+localhost:801/ok/public/index1.php/admin/user/login.html
