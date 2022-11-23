@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50740
 File Encoding         : 65001
 
-Date: 2022-11-20 18:15:52
+Date: 2022-11-23 19:00:16
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -61,9 +61,9 @@ CREATE TABLE `com` (
 -- ----------------------------
 -- Records of com
 -- ----------------------------
-INSERT INTO `com` VALUES ('郑老师', '1111', '1');
-INSERT INTO `com` VALUES ('王老师', '222222', '2');
-INSERT INTO `com` VALUES ('101', '11111', null);
+INSERT INTO `com` VALUES ('郑老师', '2222', '1');
+INSERT INTO `com` VALUES ('王老师', 'ok', '2');
+INSERT INTO `com` VALUES ('101', '老师好', null);
 
 -- ----------------------------
 -- Table structure for progress
@@ -87,6 +87,38 @@ CREATE TABLE `progress` (
 -- Records of progress
 -- ----------------------------
 INSERT INTO `progress` VALUES ('0', '101', null, '1', '1', '1', null, '', '2022-11-20 17:54:07', '2022-11-19 21:36:53');
+
+-- ----------------------------
+-- Table structure for student
+-- ----------------------------
+DROP TABLE IF EXISTS `student`;
+CREATE TABLE `student` (
+  `sno` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `sname` varchar(20) NOT NULL,
+  `sclass` varchar(20) NOT NULL,
+  `steacher` varchar(20) NOT NULL,
+  `sbody` varchar(256) NOT NULL,
+  `sscore` int(3) NOT NULL,
+  `ssex` varchar(5) NOT NULL,
+  `swhy` varchar(50) NOT NULL,
+  `stel` varchar(11) NOT NULL,
+  `test1` int(1) NOT NULL DEFAULT '0',
+  `sbudabian` int(1) NOT NULL DEFAULT '0',
+  `content` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of student
+-- ----------------------------
+INSERT INTO `student` VALUES ('22001', '张三', '22计科1班', '王老师	', '在线学习网站的设计与实现', '80', '男', '获得国赛二等奖', '19047170001', '0', '1', null);
+INSERT INTO `student` VALUES ('22002', '李四', '22计科1班', '王老师	', '基于线性回归房价预测系统的设计与实现', '80', '男', '', '19047170002', '0', '1', null);
+INSERT INTO `student` VALUES ('22003', '王五', '22计科2班', '王老师	', '新闻内容管理系统的设计与实现', '0', '男', '', '19047170003', '0', '0', null);
+INSERT INTO `student` VALUES ('22004', '小丽', '22计科1班', '王老师', '基于Web的教学进度管理系统', '0', '女', '获得国赛一等奖', '19047170010', '0', '0', null);
+INSERT INTO `student` VALUES ('22005', '萧炎', '22计科1班', '王老师	', '数字图像加密与实现	', '0', '男', '', '19047170011', '0', '0', null);
+INSERT INTO `student` VALUES ('22006', '张小小', '22计科2班', '', '数字图像加密与实现', '0', '女', '', '19047170012', '0', '0', null);
+INSERT INTO `student` VALUES ('22007', '苏小小', '22计科1班', '王老师	', '家政服务管理系统设计与实现	', '0', '男', '不想答辩', '19047170013', '0', '0', null);
+INSERT INTO `student` VALUES ('22008', '梁静', '22计科1班', '王老师	', '智能天气预报提示系统', '0', '女', '', '19047170020', '0', '0', null);
+INSERT INTO `student` VALUES ('101', '101 1', '1', '', '111web', '0', '2', 'why', '134', '0', '0', '');
 
 -- ----------------------------
 -- Table structure for teacher
@@ -155,6 +187,6 @@ CREATE TABLE `user` (
 INSERT INTO `user` VALUES (null, null, 'admin', 'admin', '1', '1234567890', 'admin');
 INSERT INTO `user` VALUES (null, null, '123', '123', '2', '2345678901', 'admin');
 INSERT INTO `user` VALUES (null, null, '456', '456', '3', '3456789012', 'admin');
-INSERT INTO `user` VALUES (null, null, '001', '001', null, '13411111111', 'teacher');
-INSERT INTO `user` VALUES (null, null, '002', '002', null, '13410000000', 'teacher');
-INSERT INTO `user` VALUES ('王老师', '1011', '101', '101', null, '13422222222', 'stu');
+INSERT INTO `user` VALUES (null, null, '001', '001', '4', '13411111111', 'teacher');
+INSERT INTO `user` VALUES (null, null, '002', '002', '5', '13410000000', 'teacher');
+INSERT INTO `user` VALUES ('郑老师', '1011', '101', '101', '6', '13422222222', 'stu');

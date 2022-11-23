@@ -18,6 +18,14 @@
       </list>
     </option>
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/topthink/think-captcha" />
@@ -77,8 +85,35 @@
       <workItem from="1668830072021" duration="4054000" />
       <workItem from="1668835599408" duration="25858000" />
       <workItem from="1668909022579" duration="17761000" />
-      <workItem from="1668942942031" duration="467000" />
-      <workItem from="1668947804000" duration="758000" />
+      <workItem from="1669041169754" duration="1436000" />
+      <workItem from="1669042685874" duration="1886000" />
+      <workItem from="1669047033569" duration="1828000" />
+      <workItem from="1669049536097" duration="710000" />
+      <workItem from="1669108819028" duration="1582000" />
+      <workItem from="1669110478586" duration="114000" />
+      <workItem from="1669110635944" duration="1773000" />
+      <workItem from="1669112456309" duration="1577000" />
+      <workItem from="1669118937092" duration="1843000" />
+      <workItem from="1669121689899" duration="1375000" />
+      <workItem from="1669123497435" duration="1775000" />
+      <workItem from="1669125307413" duration="1898000" />
+      <workItem from="1669127474069" duration="1785000" />
+      <workItem from="1669129327006" duration="1871000" />
+      <workItem from="1669131234710" duration="1110000" />
+      <workItem from="1669133365911" duration="1748000" />
+      <workItem from="1669135176740" duration="1896000" />
+      <workItem from="1669137191401" duration="1753000" />
+      <workItem from="1669139689021" duration="1774000" />
+      <workItem from="1669141498392" duration="1776000" />
+      <workItem from="1669143369458" duration="1771000" />
+      <workItem from="1669145199369" duration="1780000" />
+      <workItem from="1669148373498" duration="1778000" />
+      <workItem from="1669150207613" duration="1770000" />
+      <workItem from="1669152051659" duration="1777000" />
+      <workItem from="1669153878848" duration="1771000" />
+      <workItem from="1669155714205" duration="1766000" />
+      <workItem from="1669157532781" duration="291000" />
+      <workItem from="1669194228837" duration="5981000" />
     </task>
     <servers />
   </component>
